@@ -1,5 +1,6 @@
 const btnPlay = document.getElementById("play-btn");
 btnPlay.addEventListener("click", play);
+const result = document.querySelector(".result")
 
 let notBomb = [];
 let myScore = 0;
@@ -10,12 +11,11 @@ let gameOver = false
 function play() {
   gameOver = false;
   myScore = 0;
+  result.innerHTML = "";
 
   // aggiungo class grid 
   const elemGrid = document.querySelector(".wrapper > div");
   elemGrid.classList.add("grid");
-  const elemMain = document.querySelector("main");
-  elemMain.classList.remove("bg-loss");
 
   // seleziono i valori dell'input choice
   let level = document.getElementById("choose-level").value;
@@ -31,7 +31,8 @@ function play() {
     gridSize = numArray(49)
   };
 
-  maxClick = gridSize - 16;
+  maxClick = parseInt(gridSize.length - 16);
+  console.log(maxClick);
 
   // generare le bombe
   const bombs = generateBombs(gridSize.length);
@@ -39,6 +40,7 @@ function play() {
 
   // creo la griglia
   const grid = document.querySelector(".grid");
+  grid.classList.remove("bg-loss");
   grid.innerHTML = "";
 
   // creo il ciclo for per l'array
@@ -66,9 +68,9 @@ function play() {
 
         if (bombs.includes(clickNumber)) {
           console.log("Hai trovato una Bomba!");
-          console.log("il tuo punteggio è:", myScore);
+          result.innerHTML = `HAI PERSO DOPO ${myScore} TENTATIVI`;
           this.classList.add("boom");
-          elemMain.classList.add("bg-loss");
+          grid.classList.add("bg-loss");
           gameOver = true;
 
         } else {
@@ -79,6 +81,7 @@ function play() {
         };
 
         if(myScore == maxClick) {
+          result.innerHTML = "COMPLIMENTI HAI VINTOOO!!!"
           gameOver = true;
         };
 

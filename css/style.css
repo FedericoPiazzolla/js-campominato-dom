@@ -15,8 +15,21 @@ header{
   max-width: 1200px;
 }
 
-button{
+.button {
+  font-size: 1.5rem;
+}
+
+#choose-level {
+  margin-left: 1rem;
+  font-size: 1rem;
+  padding: .2rem .5rem;
+}
+
+#play-btn {
+  font-size: 1.2rem;
   margin-left: 1em;
+  padding: .2rem 1rem;
+  border-radius: 1rem;
 }
 
 /* MAIN */
@@ -24,6 +37,7 @@ button{
   width: 100%;
   height: calc(100vh - 200px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: aquamarine;
@@ -79,6 +93,12 @@ h2 {
 
 .boom {
   background-color: red;
+}
+
+.result {
+  font-weight: bolder;
+  padding: 3rem 0;
+  font-size: 2rem;
 }
 
 /* FOOTER */
