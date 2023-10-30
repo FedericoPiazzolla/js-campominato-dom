@@ -32,11 +32,10 @@ function play() {
   };
 
   maxClick = parseInt(gridSize.length - 16);
-  console.log(maxClick);
 
   // generare le bombe
   const bombs = generateBombs(gridSize.length);
-  console.log(bombs, "const = bombs");
+  console.log(bombs);
 
   // creo la griglia
   const grid = document.querySelector(".grid");
@@ -126,8 +125,3 @@ function generateBombs(max) {
   };
   return result;
 };
-
-// funzione per terminare il gioco
-function endGame(isWin) {
-  
-}
