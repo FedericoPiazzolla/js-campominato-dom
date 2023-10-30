@@ -1,8 +1,14 @@
 const btnPlay = document.getElementById("play-btn");
 btnPlay.addEventListener("click", play);
 
+let notBomb = [];
+let myScore = 0;
+let maxClick = 0;
+let gameOver = false
+
 // funzione al play del button
 function play() {
+  gameOver = false;
   // aggiungo class grid 
   const elemGrid = document.querySelector(".wrapper > div");
   elemGrid.classList.add("grid");
@@ -20,6 +26,8 @@ function play() {
   } else if (level === 'Hard') {
     gridSize = numArray(49)
   };
+
+  maxClick = gridSize - 16;
 
   // generare le bombe
   const bombs = generateBombs(gridSize.length);
@@ -50,13 +58,26 @@ function play() {
     div.addEventListener("click", function () {
       const clickNumber = parseInt(this.textContent);
       console.log(clickNumber);
+      if(!gameOver) {
+        if (bombs.includes(clickNumber)) {
+          console.log("Hai trovato una Bomba!");
+          console.log("il tuo punteggio è:", myScore);
+          this.classList.add("boom")
+          gameOver = true;
 
-      if (bombs.includes(clickNumber)) {
-        this.classList.add("boom")
+        } else {
+          this.classList.add("safe");
+          myScore ++;
+          console.log("il tuo punteggio è di: ", myScore);
+        };
 
-      } else {
-        this.classList.add("safe");
+        if(myScore == maxClick) {
+          gameOver = true;
+        };
       };
+      
+      console.log(myScore);
+      return myScore;
 
     });
 
@@ -96,7 +117,7 @@ function generateBombs(max) {
   return result;
 };
 
-// funzione per verificare se la cella cliccata fa parte dell'array di bombe
-function isBomb(params) {
+// funzione per terminare il gioco
+function endGame(isWin) {
   
 }
