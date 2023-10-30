@@ -20,11 +20,10 @@ function play() {
   } else if (level === 'Hard') {
     gridSize = numArray(49)
   };
-  console.log(gridSize);
-  
+
   // generare le bombe
   const bombs = generateBombs(gridSize.length);
-  console.log(bombs);
+  console.log(bombs, "const = bombs");
 
   // creo la griglia
   const grid = document.querySelector(".grid");
@@ -49,9 +48,13 @@ function play() {
 
     // al click di ogni casella si colora di blue
     div.addEventListener("click", function () {
-      this.classList.add("blue");
+      // this.classList.add("safe");
       const clickNumber = this.textContent;
       console.log(clickNumber);
+
+      if (clickNumber === bombs) {
+        this.classList.add("boom")
+      }
     });
 
     grid.append(div);

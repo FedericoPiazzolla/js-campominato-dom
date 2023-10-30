@@ -19,7 +19,7 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 - [ ] array di numeri " non bombe" cliccate dal giocatore per avere il punteggio
 ***
 - [ ] al click sulla cella della griglia
-  - [ ] leggo il numero cliccato
+  - [X] leggo il numero cliccato
   - [ ] SE il numero cliccato fa parte dell'array delle bombe
     - [ ] la cella deventa rossa
     - [ ] fine del gioco --> utente perde

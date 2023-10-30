@@ -65,8 +65,12 @@ h2 {
   aspect-ratio: 1;
 }
 
-.blue {
+.safe {
   background-color: blue;
+}
+
+.boom {
+  background-color: red;
 }
 
 /* FOOTER */
