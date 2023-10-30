@@ -14,6 +14,8 @@ function play() {
   // aggiungo class grid 
   const elemGrid = document.querySelector(".wrapper > div");
   elemGrid.classList.add("grid");
+  const elemMain = document.querySelector("main");
+  elemMain.classList.remove("bg-loss");
 
   // seleziono i valori dell'input choice
   let level = document.getElementById("choose-level").value;
@@ -65,7 +67,8 @@ function play() {
         if (bombs.includes(clickNumber)) {
           console.log("Hai trovato una Bomba!");
           console.log("il tuo punteggio è:", myScore);
-          this.classList.add("boom")
+          this.classList.add("boom");
+          elemMain.classList.add("bg-loss");
           gameOver = true;
 
         } else {

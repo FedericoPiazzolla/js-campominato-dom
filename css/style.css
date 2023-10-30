@@ -30,6 +30,10 @@ button{
   color: black;
 }
 
+.bg-loss {
+  opacity: 0.5;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
