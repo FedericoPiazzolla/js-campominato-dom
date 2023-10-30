@@ -48,13 +48,16 @@ function play() {
 
     // al click di ogni casella si colora di blue
     div.addEventListener("click", function () {
-      // this.classList.add("safe");
-      const clickNumber = this.textContent;
+      const clickNumber = parseInt(this.textContent);
       console.log(clickNumber);
 
-      if (clickNumber === bombs) {
+      if (bombs.includes(clickNumber)) {
         this.classList.add("boom")
-      }
+
+      } else {
+        this.classList.add("safe");
+      };
+
     });
 
     grid.append(div);
@@ -92,3 +95,8 @@ function generateBombs(max) {
   };
   return result;
 };
+
+// funzione per verificare se la cella cliccata fa parte dell'array di bombe
+function isBomb(params) {
+  
+}

@@ -20,11 +20,11 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 ***
 - [ ] al click sulla cella della griglia
   - [X] leggo il numero cliccato
-  - [ ] SE il numero cliccato fa parte dell'array delle bombe
-    - [ ] la cella deventa rossa
+  - [X] SE il numero cliccato fa parte dell'array delle bombe
+    - [X] la cella deventa rossa
     - [ ] fine del gioco --> utente perde
   - [ ] ALTRIMENTI 
-    - [ ] la cella diventa azzurra
+    - [X] la cella diventa azzurra
     - [ ] SE questo numero non è stato gia cliccato precedentemente
       - [ ] aggiungere il numero all'array di "non bombe" cliccati
     - [ ] ALTRIMENTI se la lunghezza dell'array di "non bombe" è uguale al numero massimo di tentativi
