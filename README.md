@@ -15,18 +15,18 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 4. al click sulla cella, cambia colore;
 
 **logica del programma**
-- [ ] definire il numero massimo di tentativi consentiti: 100 / 81 / 49 -16 "bombe"
-- [ ] array di numeri " non bombe" cliccate dal giocatore per avere il punteggio
+- [X] definire il numero massimo di tentativi consentiti: 100 / 81 / 49 -16 "bombe"
+- [X] array di numeri " non bombe" cliccate dal giocatore per avere il punteggio
 ***
 - [ ] al click sulla cella della griglia
   - [X] leggo il numero cliccato
   - [X] SE il numero cliccato fa parte dell'array delle bombe
     - [X] la cella deventa rossa
-    - [ ] fine del gioco --> utente perde
+    - [X] fine del gioco --> utente perde
   - [ ] ALTRIMENTI 
     - [X] la cella diventa azzurra
-    - [ ] SE questo numero non è stato gia cliccato precedentemente
-      - [ ] aggiungere il numero all'array di "non bombe" cliccati
+    - [X] SE questo numero non è stato gia cliccato precedentemente
+      - [X] aggiungere il numero all'array di "non bombe" cliccati
     - [ ] ALTRIMENTI se la lunghezza dell'array di "non bombe" è uguale al numero massimo di tentativi
       - [ ] fine del gioco --> utente vince 
 ***

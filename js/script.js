@@ -9,6 +9,8 @@ let gameOver = false
 // funzione al play del button
 function play() {
   gameOver = false;
+  myScore = 0;
+
   // aggiungo class grid 
   const elemGrid = document.querySelector(".wrapper > div");
   elemGrid.classList.add("grid");
@@ -59,6 +61,7 @@ function play() {
       const clickNumber = parseInt(this.textContent);
       console.log(clickNumber);
       if(!gameOver) {
+
         if (bombs.includes(clickNumber)) {
           console.log("Hai trovato una Bomba!");
           console.log("il tuo punteggio è:", myScore);
@@ -67,6 +70,7 @@ function play() {
 
         } else {
           this.classList.add("safe");
+          this.classList.add("unclicked");
           myScore ++;
           console.log("il tuo punteggio è di: ", myScore);
         };
@@ -74,9 +78,9 @@ function play() {
         if(myScore == maxClick) {
           gameOver = true;
         };
+
       };
       
-      console.log(myScore);
       return myScore;
 
     });
