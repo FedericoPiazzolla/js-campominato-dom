@@ -63,15 +63,25 @@ function play() {
     div.addEventListener("click", function () {
       const clickNumber = parseInt(this.textContent);
       console.log(clickNumber);
+
+      const allCell = document.querySelectorAll(".cell");
+
       if(!gameOver) {
 
         if (bombs.includes(clickNumber)) {
           console.log("Hai trovato una Bomba!");
           result.innerHTML = `HAI PERSO DOPO ${myScore} TENTATIVI`;
-          this.classList.add("boom");
           grid.classList.add("bg-loss");
           gameOver = true;
 
+          for(let i = 0; i < allCell.length; i++) {
+            const currCell = allCell[i];
+            const curNumber = parseInt(currCell.textContent);
+            if (bombs.includes(curNumber)) {
+              currCell.classList.add("boom");
+            }
+          };
+          
         } else {
           this.classList.add("safe");
           this.classList.add("unclicked");
